@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "generated_at": "2025-12-11T14:14:35.989Z",
+  "assessment": {
+    "level": "Developing",
+    "overall_score": 63,
+    "recommendation": "Consider for junior roles - needs mentorship"
+  },
+  "scores": {
+    "prompt_quality": 43,
+    "self_sufficiency": 40,
+    "technical_depth": 60,
+    "code_coherence": 83,
+    "understanding": 90,
+    "overall": 63
+  },
+  "session": {
+    "total_prompts": 26,
+    "total_edits": 27,
+    "files_touched": 24,
+    "duration_minutes": 397
+  },
+  "flags": {
+    "red_flags": 1,
+    "green_flags": 3,
+    "red_flag_details": [
+      {
+        "type": "excessive_questions",
+        "severity": "medium",
+        "description": "Many questions without implementation attempts"
+      }
+    ],
+    "green_flag_details": [
+      {
+        "type": "architectural_thinking",
+        "description": "Shows architectural and design thinking"
+      },
+      {
+        "type": "testing_awareness",
+        "description": "Considers testing and code quality"
+      },
+      {
+        "type": "improving_specificity",
+        "description": "Prompt quality improving over time (more detailed)"
+      }
+    ]
+  },
+  "strengths": [
+    "architectural_thinking",
+    "testing_awareness",
+    "improving_specificity"
+  ],
+  "weaknesses": [
+    {
+      "area": "excessive_questions",
+      "severity": "medium"
+    },
+    {
+      "area": "prompt_quality",
+      "severity": "high"
+    }
+  ],
+  "work_style": "exploratory",
+  "technical_profile": {
+    "domains": [
+      "Backend",
+      "Testing"
+    ],
+    "technologies": [
+      "node",
+      "python",
+      "sql"
+    ],
+    "concepts": [
+      "database",
+      "testing",
+      "function",
+      "hooks"
+    ],
+    "expertise_areas": [
+      "Testing",
+      "UI Development",
+      "Database"
+    ]
+  }
+}

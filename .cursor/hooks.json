@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeSubmitPrompt": [
+      {
+        "command": "node prompt-logger.js"
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "node edit-logger.js"
+      }
+    ]
+  }
+}
