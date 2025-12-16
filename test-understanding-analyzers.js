@@ -55,21 +55,28 @@ async function testAllAnalyzers(conversationId) {
     }
     mistakeCatcher.close();
 
-    // Test 3: Debugging Reasoning Analyzer
-    console.log('\n3. DEBUGGING REASONING ANALYZER');
+    // Test 3: Debugging Reasoning Analyzer (AI-Powered)
+    console.log('\n3. DEBUGGING REASONING ANALYZER (AI-Powered)');
     console.log('-'.repeat(60));
     const debuggingReasoning = new DebuggingReasoningAnalyzer();
     const drResult = await debuggingReasoning.analyze(conversationId);
     console.log(`Score: ${drResult.score.toFixed(1)}/10`);
     console.log(`Verdict: ${drResult.verdict}`);
-    console.log(`Hypothesis Formation: ${drResult.hypothesisFormation.count}`);
-    console.log(`Systematic Approach Score: ${drResult.systematicApproach.score}/10`);
-    console.log(`Root Cause Analysis: ${drResult.rootCauseAnalysis.count}`);
-    console.log(`Debugging Sessions: ${drResult.debuggingSessionCount}`);
-    console.log(`Debugging Prompts: ${drResult.debuggingPromptCount}`);
-    if (drResult.hypothesisFormation.examples.length > 0) {
-      console.log('\nExample Hypotheses:');
-      drResult.hypothesisFormation.examples.slice(0, 2).forEach((ex, i) => {
+    console.log(`Confidence: ${(drResult.confidence * 100).toFixed(0)}%`);
+    console.log(`Systematic Debugging Found: ${drResult.systematicDebugging.count}`);
+    console.log(`Average Quality: ${drResult.systematicDebugging.quality.toFixed(1)}/10`);
+    console.log(`Analysis Method: ${drResult.analysisMethod}`);
+    console.log(`AI Success Rate: ${(drResult.aiSuccessRate * 100).toFixed(0)}%`);
+    console.log(`Debugging Prompts Analyzed: ${drResult.debuggingPromptCount}`);
+    if (drResult.systematicDebugging.breakdown && Object.keys(drResult.systematicDebugging.breakdown).length > 0) {
+      console.log('Type Breakdown:');
+      for (const [type, count] of Object.entries(drResult.systematicDebugging.breakdown)) {
+        console.log(`  - ${type}: ${count}`);
+      }
+    }
+    if (drResult.systematicDebugging.examples && drResult.systematicDebugging.examples.length > 0) {
+      console.log('\nExample Systematic Debugging:');
+      drResult.systematicDebugging.examples.slice(0, 2).forEach((ex, i) => {
         console.log(`  ${i + 1}. ${ex.substring(0, 100)}...`);
       });
     }
